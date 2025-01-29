@@ -1,0 +1,49 @@
+{% extends 'components/base.html' %}
+{% load static %}
+
+
+{% block main %}
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 my-auto">
+
+        <div class="col">
+          <div class="card shadow-sm">
+             <img src="{% static 'images/facebook_img.png'%}" width="100%">
+            <p>Facebook</p>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="{% url 'django_app:facebook'%}"> <button type="button" class="mx-auto btn btn-lg btn-outline-secondary">To the Site!</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+             <img src="{% static 'images/inst_img.jpg'%}" width="100%">
+            <p>Instagram</p>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href = "{% url 'django_app:instagram'%}"><button type="button" class="mx-auto btn btn-lg btn-outline-secondary">To the Site!</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+             <img src="{% static 'images/microsoft_img.png'%}" width="100%">
+            <p>Microsoft</p>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                  <button type="button" class="mx-auto btn btn-lg btn-outline-secondary">To the Site!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+{% endblock main %}
