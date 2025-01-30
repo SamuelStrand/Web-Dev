@@ -9,5 +9,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('facebook/', views.facebook, name='facebook'),
     path('instagram/', views.instagram, name='instagram'),
+    path('copilot/', views.copilot, name='copilot'),
 
 ]

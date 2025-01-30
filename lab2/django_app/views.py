@@ -10,3 +10,6 @@ def facebook(request):
 
 def instagram(request):
     return render(request, 'instagram.html')
+
+def copilot(request):
+    return render(request, 'copilot.html')
