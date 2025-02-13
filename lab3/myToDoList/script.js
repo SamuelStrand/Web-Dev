@@ -1,9 +1,12 @@
+
 function addItem() {
     var inputValue = document.getElementById("todo-input").value;
     if (inputValue === '') {
         alert("Please enter a todo item.");
         return;
     }
+
+
 
     var listItem = document.createElement("li");
     var textNode = document.createTextNode(inputValue);
@@ -31,7 +34,14 @@ function toggleDone() {
 }
 
 
+
 var listItems = document.getElementsByTagName("li");
 for (var i = 0; i < listItems.length; i++) {
     listItems[i].addEventListener('click', toggleDone);
 }
+
+function deleteAll(){
+    listItems.length = 0;
+    document.getElementById("todo-list").innerHTML = ""
+}
+
