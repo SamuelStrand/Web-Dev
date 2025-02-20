@@ -1,0 +1,16 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product" class="product-details">
+  <h2>{{ product.name }}</h2>
+
+  <div class="product-images">
+    <div *ngFor="let imageUrl of product.images" >
+      <img [src]="imageUrl" alt="{{ product.name }}">
+    </div>
+  </div>
+
+  
+  <p>{{ product.description }}</p>
+  <button (click)="like(product)">Like</button>
+  <button (click)="addToCart(product)">Add to Cart</button>
+</div>

@@ -1,0 +1,17 @@
+<img class="logo" src="assets/logo.png" alt="Logo">
+
+<div class="cart">
+<a routerLink="/cart" class="button fancy-button">
+  <em class="material-icons">shopping_cart</em>Cart
+</a>
+</div>
+
+<div class="container">
+  <div class="categories">
+    <a *ngFor="let category of categories" [routerLink]="['/categories', category.name]"> {{ category.name }} </a>
+  </div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
