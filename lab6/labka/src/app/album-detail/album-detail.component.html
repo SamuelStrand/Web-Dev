@@ -1,0 +1,13 @@
+<div class="container mt-4">
+  <a [routerLink]="['/albums']" class="btn btn-outline-secondary mb-3">Return</a>
+  <div class="card shadow-sm" *ngIf="loaded">
+    <div class="card-body">
+      <h3 class="card-title text-primary">Album Details #{{ album.id }}</h3>
+      <h4 class="card-subtitle mb-3 text-muted">{{ album.title }}</h4>
+      <p class="card-text">{{ album.body }}</p>
+      <a routerLink="photos" class="btn btn-outline-primary">View Photos</a>
+    </div>
+  </div>
+
+  <p *ngIf="!loaded" class="text-center text-muted mt-3">Album detail page is loading...</p>
+</div>

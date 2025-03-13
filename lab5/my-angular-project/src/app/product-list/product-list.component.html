@@ -1,33 +1,36 @@
 <h2>Products</h2>
 
-
 <div *ngFor="let product of products">
   <img src={{product.image}}>
-
   <h3>
     <a
-    [title]="product.name"
-    [routerLink]="['/products', product.id]">
+      [title]="product.name"
+      [routerLink]="['/products', product.id]">
       {{ product.name }}
     </a>
   </h3>
 
   <p *ngIf="product.description">Description: {{ product.description }}</p>
-  <p *ngIf="product.rating"> Rating {{product.rating}}/5</p>
+  <p *ngIf="product.rating"> Rating {{product.rating}}/5 <i class="fa-solid fa-star" style="color: goldenrod;"></i></p>
 
   <p *ngIf="product.price">Price: {{product.price}} ₸</p>
 
-  <p> {{product.likes}} likes</p>
+  <p> {{product.likes}} likes <i class="fa-solid fa-heart" style="color: red"></i></p>
 
-  
-<a [href]="product.link"><button>Open Page</button></a>
+  <a [href]="product.link"><button>Open Page</button></a>
 
-  <button type="button" (click)="shareTelegram(product)">Share in Telegram</button>
+  <button type="button" (click)="shareTelegram(product)">Share in Telegram <i style = 'color: white' class="fa-brands fa-telegram icon"></i></button>
+  <button (click)="toggleLike(product)"
+          [class.liked]="isLiked(product)">
+     {{ isLiked(product) ? 'Unlike' : 'Like' }}<i class="fa-solid fa-heart icon" style="color: red;"></i>
+  </button>
+  <button class="whatsapp" type="button" (click)="shareWhatsapp(product)">
+    Share in Whatsapp <i class="fa-brands fa-whatsapp icon" style="color: white"></i>
+  </button>
 
-  <button class="whatsapp" type="button" (click)="shareWhatsapp(product)">Share in Whatsapp</button>
-
-  <button class="delete" type="button" (click)="onDeleteProduct(product)">Delete</button>
+  <button class="delete" type="button" (click)="onDeleteProduct(product)">Delete <i style="color: white" class="fa-solid fa-trash icon"></i></button>
 
   <app-product-alerts [product]="product" (notify)="onNotify()">
   </app-product-alerts>
 </div>
+

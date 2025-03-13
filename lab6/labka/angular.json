@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "AngularLab": {
+    "labka": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-lab",
+            "outputPath": "dist/labka",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,10 +25,16 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
             ],
-            "scripts": []
+            "scripts": [  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -58,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "AngularLab:build:production"
+              "buildTarget": "labka:build:production"
             },
             "development": {
-              "buildTarget": "AngularLab:build:development"
+              "buildTarget": "labka:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -69,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "AngularLab:build"
+            "buildTarget": "labka:build"
           }
         },
         "test": {
@@ -94,6 +100,6 @@
     }
   },
   "cli": {
-    "analytics": "340d7bda-57a8-4950-8ca7-de75886c0322"
+    "analytics": "0de2f348-83c0-4434-9a6d-3c1048b1e0b4"
   }
 }

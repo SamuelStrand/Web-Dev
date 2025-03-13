@@ -6,6 +6,7 @@ import { ActivatedRoute } from "@angular/router";
 
 
 
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -15,9 +16,11 @@ import { ActivatedRoute } from "@angular/router";
 export class ProductListComponent implements OnInit{
   // categories = [...category];
   products = [...products];
+  likedProducts: Set<number> = new Set();
+
 
   constructor(private route: ActivatedRoute,) {}
-  
+
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const categoryName = params.get('categoryName');
@@ -33,7 +36,7 @@ export class ProductListComponent implements OnInit{
     const telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(product.link)}`;
     window.open(telegramUrl, '_blank');
   }
-  
+
   shareWhatsapp(product: Product){
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent('Check out this product!')}%20${encodeURIComponent(product.link)}`;
     window.open(whatsappUrl, '_blank')
@@ -50,7 +53,20 @@ export class ProductListComponent implements OnInit{
       this.products.splice(index, 1);
     }
   }
-  
+  toggleLike(product: Product) {
+    if (this.likedProducts.has(product.id)) {
+      this.likedProducts.delete(product.id);
+      product.likes--;
+    } else {
+      this.likedProducts.add(product.id);
+      product.likes++;
+    }
+  }
+
+  isLiked(product: Product): boolean {
+    return this.likedProducts.has(product.id);
+  }
+
 }
 
 

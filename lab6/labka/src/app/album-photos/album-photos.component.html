@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <!-- Кнопка "Back" -->
+  <a [routerLink]="['../']" class="btn btn-outline-secondary mb-3">Back</a>
+
+  <!-- Галерея фотографий -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col" *ngFor="let img of photo">
+      <div class="card shadow-sm">
+        <img [src]="img.thumbnailUrl" class="card-img-top" alt="Photo #{{ img.id }}">
+        <div class="card-body">
+          <h5 class="card-title">#{{ img.id }}</h5>
+          <p class="card-text">{{ img.title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

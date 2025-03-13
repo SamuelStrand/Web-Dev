@@ -5,7 +5,7 @@ export interface Product {
   description: string;
   link: string;
   image: string;
-  images: string[];
+  images?: string[];
   rating: number;
   categoryName: string;
   likes: number
@@ -33,7 +33,7 @@ export const products = [
     price: 579990,
     description: 'Smartphone with 200MP camera, Snapdragon 8 Gen 3, and S Pen support.',
     link: 'https://www.samsung.com/galaxy-s24-ultra/',
-    image: 'https://images.samsung.com/is/image/samsung/p6pim/ru/sm-s928bzkdser/gallery/ru-galaxy-s24-ultra-s928-489166-sm-s928bzkdser-539840673',
+    image: 'assets/tech2.jpg',
     images: [
       'https://images.samsung.com/galaxy-s24-ultra-1.jpg',
       'https://images.samsung.com/galaxy-s24-ultra-2.jpg'
@@ -45,10 +45,10 @@ export const products = [
   {
     id: 3,
     name: 'Xiaomi 14 Pro',
-    price: 399990,
+    price: 69999,
     description: 'Xiaomi flagship with LTPO OLED screen, Leica camera, and Snapdragon 8 Gen 3.',
     link: 'https://www.mi.com/global/product/xiaomi-14-pro/',
-    image: 'https://www.mi.com/global/images/xiaomi-14-pro.jpg',
+    image: 'assets/tech3.jpg',
     images: [
       'https://www.mi.com/global/images/xiaomi-14-pro-1.jpg',
       'https://www.mi.com/global/images/xiaomi-14-pro-2.jpg'
@@ -80,7 +80,7 @@ export const products = [
     price: 499990,
     description: 'Gaming laptop with GeForce RTX 4070, Intel i9, and 240Hz display.',
     link: 'https://rog.asus.com/laptops/rog-strix/rog-strix-g16-2023-series/',
-    image: 'https://dlcdnwebimgs.asus.com/gain/B283A0EF-3E6D-4FC6-ACD3-84E5B06C5A56',
+    image: 'assets/tech4.jpg',
     images: [
       'https://dlcdnwebimgs.asus.com/rog-strix-g16-1.jpg',
       'https://dlcdnwebimgs.asus.com/rog-strix-g16-2.jpg'
@@ -97,7 +97,7 @@ export const products = [
     price: 1499990,
     description: 'Premium 8K TV with Quantum Mini LED and AI processor.',
     link: 'https://www.samsung.com/tvs/neo-qled/',
-    image: 'https://images.samsung.com/is/image/samsung/p6pim/ru/qn75qn900cuxru/gallery/ru-neo-qled-8k-qn900c-qn75qn900cuxru-535369613?$720_576_PNG$',
+    image: 'assets/tech5.jpg',
     images: [
       'https://images.samsung.com/neo-qled-8k-1.jpg',
       'https://images.samsung.com/neo-qled-8k-2.jpg'
@@ -114,7 +114,7 @@ export const products = [
     price: 299990,
     description: 'Powerful cordless vacuum cleaner with laser detection and HEPA filter.',
     link: 'https://www.dyson.com/vacuums/v15-detect/',
-    image: 'https://www.dyson.com/images/dyson-v15.jpg',
+    image: 'assets/tech6.jpg',
     images: [
       'https://www.dyson.com/images/dyson-v15-1.jpg',
       'https://www.dyson.com/images/dyson-v15-2.jpg'
@@ -129,10 +129,10 @@ export const products = [
     price: 369990,
     description: 'Washing machine with AI DD, steam treatment, and efficient water consumption.',
     link: 'https://www.lg.com/washing-machines/',
-    image: 'https://www.lg.com/images/washing-machine.jpg',
+    image: 'assets/tech7.jpg',
     images: [
-      'https://www.lg.com/images/washing-machine-1.jpg',
-      'https://www.lg.com/images/washing-machine-2.jpg'
+      'assets/tech7.jpg',
+      'assets/tech7.jpg'
     ],
     rating: 4.5,
     categoryName: 'Home Appliances',

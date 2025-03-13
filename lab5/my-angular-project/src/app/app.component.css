@@ -27,3 +27,9 @@
     font-weight: 700;
     border-radius: 10px;
 }
+.active-category {
+  color: white !important;
+  background-color: #007bff; /* Blue background */
+  padding: 10px 15px;
+  border-radius: 5px;
+}

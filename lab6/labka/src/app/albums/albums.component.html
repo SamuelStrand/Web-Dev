@@ -1,0 +1,34 @@
+<div class="container mt-4">
+  <fieldset class="border p-3 mb-4">
+    <legend class="w-auto text-primary">Add New Album</legend>
+    <div class="mb-3">
+      <label for="title" class="form-label">Title:</label>
+      <input type="text" class="form-control" [(ngModel)]="newAlbum.title" id="title">
+    </div>
+    <div class="mb-3">
+      <label for="body" class="form-label">Description:</label>
+      <textarea class="form-control" [(ngModel)]="newAlbum.body" id="body"></textarea>
+    </div>
+    <button class="btn btn-primary" (click)="addAlbum()">Add Album</button>
+  </fieldset>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" *ngIf="loaded; else loading">
+    <div class="col" *ngFor="let album of albums">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-primary">Album #{{ album.id }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ album.title }}</h6>
+          <p class="card-text">{{ album.body }}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <a [routerLink]="['/albums', album.id]" class="btn btn-sm btn-outline-primary">View Album</a>
+            <button class="btn btn-sm btn-outline-danger" (click)="deleteAlbum(album.id)">X</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <p class="text-center text-muted mt-3">Albums are loading...</p>
+  </ng-template>
+</div>
