@@ -1,11 +1,32 @@
 <div class="container mt-4">
   <a [routerLink]="['/albums']" class="btn btn-outline-secondary mb-3">Return</a>
+
   <div class="card shadow-sm" *ngIf="loaded">
     <div class="card-body">
       <h3 class="card-title text-primary">Album Details #{{ album.id }}</h3>
-      <h4 class="card-subtitle mb-3 text-muted">{{ album.title }}</h4>
-      <p class="card-text">{{ album.body }}</p>
-      <a routerLink="photos" class="btn btn-outline-primary">View Photos</a>
+
+      <label for="albumTitle" class="form-label">Title:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="albumTitle"
+        [value]="album.title"
+        (input)="updateTitle($event)"
+      />
+      
+
+      <label for="albumBody" class="form-label mt-2">Description:</label>
+      <textarea
+        class="form-control"
+        id="albumBody"
+        rows="3"
+        [value]="album.body"
+        (input)="updateBody($event)"
+      ></textarea>
+
+      <button class="btn btn-success mt-3" (click)="saveAlbum()">Save</button>
+
+      <a routerLink="photos" class="btn btn-outline-primary mt-3">View Photos</a>
     </div>
   </div>
 
