@@ -14,7 +14,7 @@ export const routes: Routes = [
     {path: 'albums/:albumId',component: AlbumDetailComponent, title: 'Album Details' },
     {path: 'albums/:id/photos', component: AlbumPhotosComponent},
     {path: '**', component: NotFoundComponent, title: '404 Not Found'}
-    
-    
+
+
 
 ];

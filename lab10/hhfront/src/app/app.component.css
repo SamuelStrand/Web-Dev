@@ -1,0 +1,32 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.content {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.content form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.content input[type="text"] {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.content button[type="submit"] {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.content p {
+    margin: 5px 0;
+}
