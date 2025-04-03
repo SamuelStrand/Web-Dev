@@ -1,15 +1,35 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { routes } from './app-routing.module';
+import { CommonModule, NgFor } from '@angular/common';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { Company } from './company';
+import { Vacancy } from './vacancy';
+import { DataService } from './company.service';
+
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule],
-  template: `
-    <h1>Welcome to HH Frontend</h1>
-    <router-outlet></router-outlet>
-  `,
-  styleUrls: ['./app.component.css'],
+  imports: [RouterOutlet, RouterModule, CommonModule, NgFor],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'hhfront';
+  companies!: Company[];
+  vacancies!: Vacancy[];
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(): void {
+    this.loadCompanies();
+  }
+
+  loadCompanies(): void {
+    this.dataService.getCompanies().subscribe(companies => {
+      this.companies = companies;
+    });
+  }
+
+  
+}
